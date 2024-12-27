@@ -90,3 +90,7 @@ html {
     text-align: center;
   }
   
+  #newgame:hover{
+    cursor: pointer;
+    color:#7a7a7a
+  }
