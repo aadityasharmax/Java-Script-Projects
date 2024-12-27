@@ -34,7 +34,7 @@ function validateGuess(guess) {
     prevguess.push(guess);
   }
 
-  if (numGuess > 10) {
+  if (numGuess >= 10) {
     displayGuess(guess);
     displayMessage(`Random number was ${randomNumber}`);
     endGame();
