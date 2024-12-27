@@ -10,7 +10,9 @@ function change(color){
 }
 
 function wow(){
-  body.outerHTML = "<center><h1>Told You</h1></center>"
+  body.innerHTML = "<center><h1>Told You</h1></center>"
+  body.style.backgroundColor = "black";
+  body.style.color = "white";
 }
 
 
@@ -39,8 +41,7 @@ buttons.forEach(function(button){
       change("white");
     }
     if(e.target.id === 'black'){
-      // body.style.backgroundColor = e.target.id;
-      // change("white")
+      
       wow()
       
       
