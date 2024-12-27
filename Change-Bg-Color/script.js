@@ -17,14 +17,17 @@ function randomColor() {
   // function for start changing color
   const startChangingColor = function () {
   
-
-    // funcion to change background color
-    let changec = function(){
-      document.body.style.backgroundColor = randomColor();
-    }
-
-    //update intervalId
-    intervalId = setInterval(changec,500);
+      
+      // funcion to change background color
+      let changec = function(){
+          document.body.style.backgroundColor = randomColor();
+        }
+        
+        //update intervalId
+        if(!intervalId){
+            intervalId = setInterval(changec,500);
+        }
+        
     
   };
   // function to stop the color change using clearInterval()
