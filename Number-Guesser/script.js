@@ -46,7 +46,7 @@ function validateGuess(guess) {
 
 function checkGuess(guess) {
   if (guess === randomNumber) {
-    displayMessage(`You guessed the correct number ${randomNumber}`);
+    displayMessage(`Wohoo!! You guessed the correct number ${randomNumber}`);
     endGame();
   } else if (guess < randomNumber) {
     displayMessage(`Try Guessing a Greater Value Number`);
