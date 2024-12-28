@@ -49,9 +49,9 @@ function checkGuess(guess) {
     displayMessage(`You guessed the correct number ${randomNumber}`);
     endGame();
   } else if (guess < randomNumber) {
-    displayMessage(`Number is TOO low`);
+    displayMessage(`Try Guessing a Greater Value Number`);
   } else if (guess > randomNumber) {
-    displayMessage(`Number is TOO high`);
+    displayMessage(`Try Guessing a Lower Value Number`);
   }
 }
 
