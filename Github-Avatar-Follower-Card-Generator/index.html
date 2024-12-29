@@ -4,33 +4,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Github Follower Checker</title>
+    <title>Github Card Generator</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 </head>
 
 <body>
 
-    <h1> User Github <span class="avatar">Avatar</span> and Follower Card Generator</h1>
-    <div>
-        <label for="inputtxt" class="label">Enter <span class="avatar">Github</span> Username : </label>
-        <input type="text" class="inputtxt" id="inputtxt">
+    <h1> User <span class="avatar">GITHUB</span> Card Generator</h1>
+    <div class="textdiv">
+        <label for="inputtxt" class="label">Enter <span class="avatar">GITHUB</span> Username : </label>
+        <input type="text" class="inputtxt" id="inputtxt" placeholder="eg. aadityasharmax">
         <input type="submit" id="sbt">
     </div>
     <div class="wrapper">
-        <img id="pic" class="pic" src="" alt="">
-
+        <img id="pic" class="pic" src="" alt="" crossorigin="anonymous">
         <div id="name" class="name"></div>
         <div id="followers" class="followers"></div>
-
+        <div id="company" class="company"></div>
+        <div id="publicrepo" class="publicrepo"></div>
+        <div id="location" class="location"></div>
     </div>
+    <button id="downloadBtn" style="display: none;">Download Card</button>
     <div class="ring neon-pink"></div>
-
-
 
     <script src="script.js"></script>
 </body>

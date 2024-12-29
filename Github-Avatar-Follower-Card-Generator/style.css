@@ -1,85 +1,105 @@
 :root {
-    --neon: #FF53cd;
+    --neon: #ff0000;
     --neon-glow: #e10361;
 }
 
-
 body {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    height: 100vh; 
+    height: 100vh;
+    overflow: hidden; 
     margin: 0; 
     background-color: rgb(0, 0, 0);
-    gap:100px;
+    gap: 20px;
 }
 
 .wrapper {
-    display: none;
+    display: none; 
     flex-direction: column;
     justify-content: center;
     align-items: center;
     border: 2px solid var(--neon);
     box-shadow: 0 0 5px var(--neon-glow), 0 0 10px var(--neon-glow), 0 0 20px var(--neon-glow);
     border-radius: 10px;
-    padding:10px 10px 40px 10px;
+    padding: 5px 5px 10px 5px;
+    gap: 10px;
+    height:550px;
+    width: 300px; 
+    background-color: rgb(0, 0, 0); 
 }
 
-h1{
-    color:white;
+.pic {
+    width: 100%; 
+    object-fit: cover; 
+    border-radius: 10px 10px 0 0; 
+}
+
+.followers, .name, .company, .publicrepo, .location {
+    font-size: 20px;
+    padding: 10px;
+    color: rgb(255, 255, 255); 
+}
+
+.textdiv{
+    display: flex;
+    gap:10px;
+}
+
+h1 {
+    color: white;
     font-family: "Poppins", serif;
     font-weight: 400;
 }
 
-.avatar{
-    color:rgb(97, 50, 148);
+.avatar {
+    color: rgb(97, 50, 148);
     font-family: "Poppins", serif;
     font-weight: 800;
 }
 
-.submit{
-    
-    padding:20px;
+.label {
+    color:white;
     font-family: "Poppins", serif;
-    font-weight: 400;
-
+    font-weight: 800;
 }
 
-
-   
-
-.followers{
-    font-size: 20px;
+#downloadBtn{
     padding:10px;
+    background-color: rgb(75, 73, 73);
+    color:rgb(255, 255, 255);
+    border:none;
+    border-radius: 30px;
+    cursor:pointer;
+    width:200px;
+}
+
+#downloadBtn:hover{
+    background-color: rgb(0, 0, 0);
     color:white;
-    font-family: "Poppins", serif;
-    font-weight: 400;
 }
 
-.pic{
-    height:200px;
-    border-radius: 10px;
-
+#sbt{
+    padding:6px;
+    background-color: rgb(53, 53, 53);
+    color:rgb(255, 255, 255);
+    border:none;
+    border-radius: 30px;
+    cursor:pointer;
+    width:100px;
 }
 
-.label{
+#sbt:hover{
+    background-color: rgb(85, 84, 84);
+    color:rgb(255, 255, 255);
+}
+
+#inputtxt{
+    border: none;
+    padding:5px;
+    border-radius: 20px;
+    width:400px;
+    background-color: rgb(53, 53, 53);
     color:white;
-    font-size: 20px;
-    font-family: "Poppins", serif;
-    font-weight: 400;
-    
 }
-
-.inputtxt{
-    height:20px;
-    width:300px;
-}
-
-.name{
-    color:white;
-    font-size: 20px;
-    font-family: "Poppins", serif;
-    font-weight: 400;
-}
-
