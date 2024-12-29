@@ -3,7 +3,7 @@ function getUrl(username) {
 }
 
 document.querySelector("#sbt").addEventListener("click", function (e) {
-  const username = document.querySelector("#inputtxt").value;
+  let username = document.querySelector("#inputtxt").value;
 
   const xhr = new XMLHttpRequest();
   xhr.open("GET", getUrl(username));
