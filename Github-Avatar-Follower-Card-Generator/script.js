@@ -3,7 +3,9 @@ function getUrl(username) {
 }
 
 document.querySelector("#sbt").addEventListener("click", function (e) {
+
   let username = document.querySelector("#inputtxt").value;
+
 
   const xhr = new XMLHttpRequest();
   xhr.open("GET", getUrl(username));
@@ -43,7 +45,7 @@ document.querySelector("#sbt").addEventListener("click", function (e) {
         }).then(function (canvas) {
           const link = document.createElement("a");
           link.href = canvas.toDataURL("image/png");
-          link.download = `${username}github-card.png`;
+          link.download = `Github-card.png`;
           link.click();
         });
       });
