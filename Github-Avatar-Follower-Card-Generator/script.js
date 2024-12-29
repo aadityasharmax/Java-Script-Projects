@@ -1,11 +1,13 @@
-let requestUrl = "";
+function getUrl(username){
+  return `https://api.github.com/users/${username}`;
+}
 
 document.querySelector("#sbt").addEventListener("click", function (e) {
 
-  requestUrl = document.querySelector("#inputtxt").value;
+  const username = document.querySelector("#inputtxt").value;
 
   const xhr = new XMLHttpRequest();
-  xhr.open("GET", requestUrl);
+  xhr.open("GET", getUrl(username));
   xhr.onreadystatechange = function () {
     if (xhr.readyState === 4) {
       const data = JSON.parse(this.responseText);
