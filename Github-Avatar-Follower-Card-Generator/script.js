@@ -3,15 +3,16 @@ function getUrl(username) {
 }
 
 document.querySelector("#sbt").addEventListener("click", function (e) {
+  const username = document.querySelector("#inputtxt").value;
 
-  let username = document.querySelector("#inputtxt").value;
-
-
-  const xhr = new XMLHttpRequest();
-  xhr.open("GET", getUrl(username));
-  xhr.onreadystatechange = function () {
-    if (xhr.readyState === 4 && xhr.status === 200) {
-      const data = JSON.parse(this.responseText);
+  fetch(getUrl(username))
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok ' + response.statusText);
+      }
+      return response.json();
+    })
+    .then(data => {
       const pic = data.avatar_url;
       const followers = data.followers;
       const name = data.name;
@@ -32,31 +33,24 @@ document.querySelector("#sbt").addEventListener("click", function (e) {
       company.innerHTML = `Company: ${companyd}`;
       publicrepo.innerHTML = `Public repository: ${publicrepod}`;
       location.innerHTML = `Location: ${locationd}`;
-      
-
-
-      // Download functionality 
-      
-      document.querySelector("#downloadBtn").addEventListener("click", function () {
-        const wrapper = document.querySelector(".wrapper");
-        html2canvas(wrapper, {
-          useCORS: true, 
-          allowTaint: true, 
-        }).then(function (canvas) {
-          const link = document.createElement("a");
-          link.href = canvas.toDataURL("image/png");
-          link.download = `Github-card.png`;
-          link.click();
-        });
-      });
 
       // Show the wrapper element and download button
       document.querySelector(".wrapper").style.display = "flex";
       document.querySelector("#downloadBtn").style.display = "block";
-    }
-  };
-  xhr.send();
+
+      // Update the download button event listener
+      document.querySelector("#downloadBtn").onclick = function () {
+        const wrapper = document.querySelector(".wrapper");
+        html2canvas(wrapper, {
+          useCORS: true, // Enable CORS
+          allowTaint: false, // Do not allow cross-origin images to taint the canvas
+        }).then(function (canvas) {
+          const link = document.createElement("a");
+          link.href = canvas.toDataURL("image/png");
+          link.download = `${username}-github-card.png`;
+          link.click();
+        });
+      };
+    })
+    .catch(error => console.log('Fetch error: ', error));
 });
-
-
-
